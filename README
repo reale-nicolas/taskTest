@@ -35,6 +35,6 @@ All documentation and comments in code should be in English
 
 PROBLEM RESOLUTION
 This application was developed using Laravel as framework base, with Homestead Laravel virtual machine.
-So, to use test the app you need to install both. To do that you can check the next links:
+So, to test the app you need to install both. To do that you can check the next links:
     - https://laravel.com/docs/5.5/homestead    <- To install homestead virtual machine.
     - https://laravel.com/docs/5.5              <- To install laravel framework. 
