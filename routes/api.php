@@ -19,8 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('tasks')->group(function () 
 {
-    Route::get('{duedate?}/{completed?}/{update?}/{creationdate?}', 'TaskController@index');
-    Route::post('',   'TaskController@create');
-    Route::put('',    'TaskController@update');
-    Route::delete('', 'TaskController@delete');
+    Route::get('{id}',      'TaskController@show');
+    Route::get('',          'TaskController@index');
+    Route::post('',         'TaskController@create');
+    Route::put('',          'TaskController@update');
+    Route::delete('{id}',   'TaskController@delete');
 });
