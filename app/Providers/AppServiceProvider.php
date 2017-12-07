@@ -23,10 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app
+            ->when('App\Services\TaskServices')
+            ->needs('App\Interfaces\RepositoryInterface')
+            ->give('App\Cache\TaskCache');
         
-        $this->app->bind(
-            'App\Interfaces\TaskInterface',
-            'App\Repositories\TaskRepository'
-        );
+        $this->app
+            ->when('App\Cache\TaskCache')
+            ->needs('App\Interfaces\RepositoryInterface')
+            ->give('App\Repositories\TaskRepository');
     }
 }
